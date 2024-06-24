@@ -34,7 +34,7 @@ def first_and_later(text):
         f"La primer letra del texto es: [{text[0]}] y la ultima [{text[-1]}]")
 
 
-def invest(text):
+def reverse(text):
     """
     Cuarto: 
         El sistema nos va a mostrar cómo quedaría el texto si invirtiéramos el orden de
@@ -53,10 +53,9 @@ def fountPython(text):
     puedes usar booleanos para hacer tu averiguación y un diccionario para encontrar la
     manera de expresarle al usuario tu respuesta.
     """
-    if "Python" in text:
-        print("La palabra Python esta en el text")
-    else:
-        print("La palabra Python NO esta en el text")
+    wasPythonFound = "Python" in text
+    dic = {True: "Si", False: "No"}
+    print(f"La palabra Python esta en el text? {dic[wasPythonFound]}")
     print()
 
 
@@ -75,6 +74,6 @@ customeLenght(userText)
 print("\n--------------------- Tercero ejercicio: --------------------")
 first_and_later(userText)
 print("\n--------------------- Cuarto ejercicio: ---------------------")
-invest(userText)
+reverse(userText)
 print("\n--------------------- Quinto ejercicio: ---------------------")
 fountPython(userText)
