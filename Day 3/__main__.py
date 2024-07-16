@@ -59,21 +59,26 @@ def fountPython(text):
     print()
 
 
-# __init__
-canBe = ["\n\tun artículo entero", "\n\tun párrafo",
-         "\n\tuna frase", "\n\tun poema"]
-# userText = input(f"Dijite su texto preferido: {''.join(canBe)}\n:: ")
-userText = "En un campo de trigo, baila la brisa suave. Flores danzan libres"
-# userLetters = input("Ahora ingresa tres letras de tu eleccion:: ").split(" ")
-userLetters = ["a", "b", "l"]
+def main():
+    # __init__
+    canBe = ["\n\tun artículo entero", "\n\tun párrafo",
+             "\n\tuna frase", "\n\tun poema"]
+    # userText = input(f"Dijite su texto preferido: {''.join(canBe)}\n:: ")
+    userText = "En un campo de trigo, baila la brisa suave. Flores danzan libres"
+    # userLetters = input("Ahora ingresa tres letras de tu eleccion:: ").split(" ")
+    userLetters = ["a", "b", "l"]
 
-print("\n--------------------- Primer ejercicio: ---------------------")
-countLetters(userText, userLetters)
-print("\n--------------------- Segundo ejercicio: --------------------")
-customeLenght(userText)
-print("\n--------------------- Tercero ejercicio: --------------------")
-first_and_later(userText)
-print("\n--------------------- Cuarto ejercicio: ---------------------")
-reverse(userText)
-print("\n--------------------- Quinto ejercicio: ---------------------")
-fountPython(userText)
+    print("\n--------------------- Primer ejercicio: ---------------------")
+    countLetters(userText, userLetters)
+    print("\n--------------------- Segundo ejercicio: --------------------")
+    customeLenght(userText)
+    print("\n--------------------- Tercero ejercicio: --------------------")
+    first_and_later(userText)
+    print("\n--------------------- Cuarto ejercicio: ---------------------")
+    reverse(userText)
+    print("\n--------------------- Quinto ejercicio: ---------------------")
+    fountPython(userText)
+
+
+if __name__ == "__main__":
+    main()

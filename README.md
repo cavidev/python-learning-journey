@@ -49,10 +49,10 @@ Hi my name is Carlos and I am learning "or re-learning" Python, following this c
    git clone https://github.com/cavidev/python-learning-journey.git
    ```
 4. Run the projects
-    Each day has a project, to which I apply all knowledge acquired that day.
-    You can entry in each day an run each project
+    Each day has a project, to which I applied all knowledge acquired that day.
+    You can run each project with the follow command
     ```sh
-    python Day<...>/project.py
+    python -m "Day <.#.>"
     ``` 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
