@@ -8,9 +8,9 @@
 <br />
 <div align="center">
   <a href="https://github.com/cavidev/python-learning-journey">
-    <img src="assets/python-logo.png" alt="Logo" width="80" height="80">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="100" alt="docker logo"  />
   </a>
-
+  
   <h3 align="center">Python 3.10.4</h3>
 
   <p align="center">
@@ -66,7 +66,18 @@ Hi my name is Carlos and I am learning "or re-learning" Python, following this c
     - Doing an calculator
 - [X] [Day 3](https://github.com/cavidev/python-learning-journey/tree/main/Day%203)
     - Know the list, tuples, set, dic and the method of each structure 
-- [Day #]()
+- [X] [Day 4](https://github.com/cavidev/python-learning-journey/tree/main/Day%204)
+  - Equals
+  - Logic operator
+  - Flow code
+  - Loops
+  - Range
+  - Enumarate
+  - Zip
+  - Min Max
+  - Random
+  - List compresion
+  - Project: guess the number
 - [Day #]()
 - [Day #]()
 - [Day #]()
