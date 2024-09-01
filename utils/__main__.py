@@ -3,7 +3,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import subprocess
 import time
-import os
+import sys
 
 
 class ChangeHandler(FileSystemEventHandler):
@@ -26,8 +26,8 @@ class ChangeHandler(FileSystemEventHandler):
 if __name__ == "__main__":
     # Ruta del directorio a monitorear
     path = Path(Path(__file__).parent.parent)
-    # Reemplaza 'tu_script.py' con tu archivo Python
-    command = ['python', 'Day 6/__main__.py']
+    module = sys.argv[1]
+    command = ['python', f'Day {module}/__main__.py']
     event_handler = ChangeHandler(command)
     print(event_handler)
     observer = Observer()

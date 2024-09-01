@@ -53,6 +53,8 @@ Hi my name is Carlos and I am learning "or re-learning" Python, following this c
     You can run each project with the follow command
     ```sh
     python -m "Day <.#.>"
+
+    python -m utils <.#.>
     ``` 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
