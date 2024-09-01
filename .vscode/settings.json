@@ -1,7 +1,11 @@
 {
+  "editor.fontFamily": "'Anonymous Pro', 'Victor Mono', monospace",
+  "editor.fontSize": 16,
     "[python]": {
+        "editor.fontFamily": "'Victor Mono', 'JetBrains Mono', 'Anonymous Pro', monospace",
         "editor.defaultFormatter": "ms-python.autopep8",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.fontSize": 16,
       },
       "python.testing.unittestArgs": [
         "-v",
@@ -12,5 +16,6 @@
       ],
       "python.testing.pytestEnabled": false,
       "python.testing.unittestEnabled": true,
-      "scm.experimental.showHistoryGraph": true
+      "scm.experimental.showHistoryGraph": true,
+      "editor.fontWeight": "normal"
 }
