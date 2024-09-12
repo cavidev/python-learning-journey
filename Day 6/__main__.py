@@ -1,14 +1,26 @@
+import inspect
 import os
-from pathlib import Path
 import shutil
-from typing import *
+from pathlib import Path
+from typing import *  # noqa: F403
+
+
+def logger(type, message):
+    if type == "error":
+        return print(f"|❌ {message}")
+    if type == "warning":
+        return print(f"|⚠️ {message}")
 
 
 def clean() -> None:
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def middleware(func: Callable) -> Callable:
+def rolback(route: Path):
+    inspect.stack()[2](route)
+
+
+def middleware(func: Callable) -> Callable:  # noqa: F405
     def wrapper(*args, **kwargs) -> str:
         # code before input call
         result = func(*args, **kwargs)
@@ -27,7 +39,7 @@ def countRecipe(route: Path) -> int:
 
 def masthead(route: Path):
     print("-" * 20)
-    text = "Recetas: "
+    text = "Recetario: "
     print(f"| {text:^17} |")
     print("-" * 20)
     totalrecipe = countRecipe(route)
@@ -48,17 +60,21 @@ def printPathNames(route: Path, isDir: bool = True):
 
 def readRecipe(route: Path):
     printPathNames(route)
-    category = int(input("Escoge una Categoria: ")) - 1
-    if countRecipe(list(route.iterdir())[category]) == 0:
+    index = int(input("Escoge una Categoria: "))
+    if index == len(list(route.iterdir())):
+        rolback(route)
+
+    category = list(route.iterdir())[index - 1]
+
+    if countRecipe(category) == 0:
         print("La categoria no tiene archivos para leer")
         input()
         return
     print(
-        f"La categoria {list(route.iterdir())[category].name} tiene {countRecipe(list(route.iterdir())[category])} recetas")
-    printPathNames(list(route.iterdir())[category])
+        f"La categoria {category.name} tiene {countRecipe(category)} recetas")
+    printPathNames(category)
     recipe = int(input("Cual te gustaria leer: ")) - 1
-    print(list(list(route.iterdir())[
-          category].glob("*.txt"))[recipe].read_text(encoding='utf-8'))
+    print(list(category.glob("*.txt"))[recipe].read_text(encoding='utf-8'))
     input()
 
 
@@ -110,38 +126,36 @@ def deleteCategory(route: Path):
     input()
 
 
-def printMenu():
+def getMenu():
     return '''
     1: Leer Receta
     2: Crear Receta
     3: Crear Categoria
     4: Eliminar Receta
     5: Eliminar Categoria
+    6: Salir
     '''
+
+
+menu = [readRecipe, createRecipe, createCategory, deleteRecipe, deleteCategory]
 
 
 def main():
     while True:
         route = Path(Path(__file__).parent / "Recetas")
         masthead(route)
-        userChoose = input(printMenu())
-        def method(a): return print("No Escogido")
-
-        if (userChoose == "1"):
-            method = readRecipe
-        if (userChoose == "2"):
-            method = createRecipe
-        if (userChoose == "3"):
-            method = createCategory
-        if (userChoose == "4"):
-            method = deleteRecipe
-        if (userChoose == "5"):
-            method = deleteCategory
-        if (userChoose == "6"):
-            break
-        method(route)
+        try:
+            userChoose = int(input(getMenu()))
+            if userChoose == 6:
+                break
+            menu[userChoose - 1](route)
+        except IndexError:
+            logger("error", "No existe esa opcion, por favor escoge una valida")
+        except ValueError:
+            logger("error", "Por favor, escribe solo numeros")
 
 
 if __name__ == "__main__":
-    clean()
-    main()
+    clean()  # Clear the current console
+    main()  # Enter door
+    os.system("exit")

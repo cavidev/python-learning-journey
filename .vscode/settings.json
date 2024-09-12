@@ -1,21 +1,24 @@
 {
   "editor.fontFamily": "'Anonymous Pro', 'Victor Mono', monospace",
   "editor.fontSize": 16,
-    "[python]": {
-        "editor.fontFamily": "'Victor Mono', 'JetBrains Mono', 'Anonymous Pro', monospace",
-        "editor.defaultFormatter": "ms-python.autopep8",
-        "editor.formatOnSave": true,
-        "editor.fontSize": 16,
+  "editor.defaultFormatter": "ms-python.autopep8",
+  "[python]": {
+      "editor.fontFamily": "'Victor Mono', 'JetBrains Mono', 'Anonymous Pro', monospace",
+      "editor.defaultFormatter": "ms-python.autopep8",
+      "editor.formatOnSave": true,
+      "editor.fontSize": 16,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
       },
-      "python.testing.unittestArgs": [
-        "-v",
-        "-s",
-        ".",
-        "-p",
-        "*_test.py"
-      ],
-      "python.testing.pytestEnabled": false,
-      "python.testing.unittestEnabled": true,
-      "scm.experimental.showHistoryGraph": true,
-      "editor.fontWeight": "normal"
+    },
+    "python.testing.unittestArgs": [
+      "-v",
+      "-s",
+      ".",
+      "-p",
+      "*_test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "editor.fontWeight": "normal"
 }
